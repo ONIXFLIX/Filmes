@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Accessible Responsive HTML5 Video Player</title>
+  <meta name="description" content="Custom HTML5 video controls and WebVTT captions." />
+  <meta name="author" content="Dennis Lembree, PayPal" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- PX-VIDEO CSS -->
+  <link rel="stylesheet" href="css/px-video.css" />
+
+  <style>
+    /*** for demo only ***/
+
+    #wrapper {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    #brand a,
+    p a {
+      border: 1px #fff dotted;
+    }
+
+    #brand a:focus,
+    p a:focus {
+      border: 1px #999 dotted;
+      outline: none;
+    }
+
+    p {
+      padding-top: 1em;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+    <div id="brand">
+      <a href="http://paypal.github.io/"><img src="images/PayPalOpenSourcecolor.svg" width="224" height="28" alt="PayPal open source"></a>
+    </div>
+
+    <h1><img src="images/logo-accessible-HTML5-video-player.svg" width="30" height="30" alt=""> www.xhdseries.top</h1>
+
+    <div class="px-video-container" id="myvid">
+      <div class="px-video-img-captions-container">
+        <div class="px-video-captions hide"></div>
+        <div class="px-video-wrapper">
+          <video poster="media/poster_PayPal_Austin2.jpg" class="px-video" controls>
+      			<!-- video files -->
+      			<source src="----" type="video/mp4" />
+      			<source src="https://lh3.googleusercontent.com/5Ek04EirssiG2jhbnkxmRJg9WkfroJW-p4eEQ8RWW9CIwOmE-RnsFTlWf5n9VykgpQLh0x9I8nqxE38v4bzs1VdKBGD1l1ij9BInISd5a4L7IPJkp-qURRbhNhhw1GVHcufH1Ij-w8yTYA37H7yFqpWgVtZIqmGdUyotsiky3W_q28ta-ghtjV2qYAk8xui1JqQ0CBYA_spBWpcsKj5C8Id3vmzsF90blR1uNdJtQznMJ2WX_754RS8qFLVnCSYdb6xmLpfTo2I0I3zfJieh1X3EfKe8aiRGfOSh3GV7cD20o2g9pLVkoWj2gyOoTHewXu-mfog9G2fxHPxsbY9eGlL1cMT7OgeKvJ1gRXOgLfwL4DihVOTY_AoXy9xw9_WepjXDGlDqwjq7hkR5EQ6T4KvOlNbgnzLful6fvWPFAskdYxRFwaHJTc3LRtvjzs-sFwpZbxuUKX0OhkVj3QNiLYoSMDxay2wsA03sMlEHAW5pip__L9d3tdpFa9S1UNT6k6fgevimsSxpv-g-6nD5qqAsdd8CgeHPk-gmALhEjvCRkCSOGKmjsreHLzDN935GXg1JmEPrQR4ozQreVtjO2WyEw1UDtakOeHzqZXt6UkVO4Kq4Jcm9mdO6L5V8nKEqtrDgelft1_lrRvTDAVnYZjU8nwJhpiYg54MtjeAIlCPxt0JO68CLl8TbAYOZRBy9jz0WesrOJYUWHIoSGiVNt_zi809XLoqHrbvyaUocWpIg_5s=s250-k-rw-no-m22" type="video/webm" />
+
+      			<!-- text track file -->
+      			<track kind="captions" label="English captions" src="media/captions_PayPal_Austin_en.vtt" srclang="en" default />
+
+      			<!-- fallback for browsers that don't support the video element -->
+      			<div>
+      				<a href="https://www.paypalobjects.com/webstatic/mktg/videos/PayPal_AustinSMB_baseline.mp4">
+      					<img src="media/poster_PayPal_Austin2.jpg" width="640" height="360" alt="download video" />
+      				</a>
+      			</div>
+      		</video>
+        </div>
+      </div>
+      <!-- end container for captions and video -->
+      <div class="px-video-controls"></div>
+    </div>
+    <!-- end video container -->
+
+    <p><a href="https://github.com/paypal/accessible-html5-video-player" target="_blank">GitHub Repo</a></p>
+
+  </div>
+  <!-- end page wrapper container -->
+  <script src="js/strings.js"></script>
+  <script src="js/px-video.js"></script>
+
+  <script>
+  // Initialize
+new InitPxVideo({
+  videoId: "myvid",
+  captionsOnDefault: true,
+  seekInterval: 20,
+  videoTitle: "PayPal Austin promo",
+  debug: true
+});
+</script>
+
+</body>
+
+</html>
